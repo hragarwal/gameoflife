@@ -1,14 +1,18 @@
+package com.gameoflife;
+
+import com.gameoflife.rules.Rule;
+
 import java.util.List;
 
-class GameOfLife {
+public class GameOfLife {
 
     private List<Rule> rules;
 
-    GameOfLife(List<Rule> rules) {
+    public GameOfLife(List<Rule> rules) {
         this.rules = rules;
     }
 
-    Matrix nextGeneration(Matrix matrix) {
+    public Matrix nextGeneration(Matrix matrix) {
         Matrix updatedMatrix = matrix;
         for (Rule rule: rules){
             updatedMatrix = rule.apply(updatedMatrix);

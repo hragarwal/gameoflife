@@ -1,4 +1,10 @@
+import com.gameoflife.Cell;
+import com.gameoflife.GameOfLife;
+import com.gameoflife.Matrix;
 import org.junit.Test;
+import com.gameoflife.rules.LiveCellWithGreaterThan3LiveNeighboursShouldDieRule;
+import com.gameoflife.rules.LiveCellWithLessThan2LiveNeighboursShouldDieRule;
+import com.gameoflife.rules.Rule;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,18 +1,21 @@
+package com.gameoflife;
+
 import java.util.Objects;
 
-class Cell {
+public class Cell {
     private int row;
     private int col;
     private int state;
+    //FIXME: extract to an enum
     private static int LIVE_CELL_STATE=1;
     private static int DEAD_CELL_STATE=0;
 
-    Cell(int row, int col) {
+    public Cell(int row, int col) {
         this.row = row;
         this.col = col;
     }
 
-     Cell(int row, int col, int state) {
+     public Cell(int row, int col, int state) {
         this.row = row;
         this.col = col;
         this.state = state;
@@ -24,10 +27,6 @@ class Cell {
 
     int getCol() {
         return col;
-    }
-
-    public int getState() {
-        return state;
     }
 
     @Override
@@ -52,15 +51,15 @@ class Cell {
                 '}';
     }
 
-    boolean isAlive() {
+    public boolean isAlive() {
         return this.state == LIVE_CELL_STATE;
     }
 
-    boolean isDead() {
+    public boolean isDead() {
         return !isAlive();
     }
 
-    Cell die() {
+    public Cell die() {
         return new Cell(row,col,DEAD_CELL_STATE);
     }
 }

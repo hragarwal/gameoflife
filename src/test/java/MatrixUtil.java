@@ -1,3 +1,6 @@
+import com.gameoflife.Cell;
+import com.gameoflife.Matrix;
+
 import java.util.ArrayList;
 import java.util.List;
 

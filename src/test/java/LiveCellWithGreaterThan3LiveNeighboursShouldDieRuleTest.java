@@ -1,4 +1,7 @@
+import com.gameoflife.Cell;
+import com.gameoflife.Matrix;
 import org.junit.Test;
+import com.gameoflife.rules.LiveCellWithGreaterThan3LiveNeighboursShouldDieRule;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;

@@ -1,22 +1,24 @@
+package com.gameoflife;
+
 import java.util.*;
 
 import static java.lang.Math.abs;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
-class Matrix {
+public class Matrix {
 
     private List<Cell> cells;
 
-    Matrix(List<Cell> cells) {
+    public Matrix(List<Cell> cells) {
         this.cells = cells;
     }
 
-    List<Cell> getCells() {
+    public List<Cell> getCells() {
         return Collections.unmodifiableList(cells);
     }
 
-    Set<Cell> getNeigbours(Cell cell) {
+    public Set<Cell> getNeigbours(Cell cell) {
         Set<Cell> neighbors = new HashSet<>();
         int row = cell.getRow();
         int col = cell.getCol();
@@ -32,14 +34,14 @@ class Matrix {
         return neighbors;
     }
 
-    long getLiveNeighboursCount(Cell cell) {
+    public long getLiveNeighboursCount(Cell cell) {
         return this.getNeigbours(cell)
                 .stream()
                 .filter(Cell::isAlive)
                 .count();
     }
 
-    Cell getCellAtPosition(int row, int col) {
+    public Cell getCellAtPosition(int row, int col) {
         return cells.stream()
                 .filter(cell -> row==cell.getRow() && col==cell.getCol())
                 .findFirst()
