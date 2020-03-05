@@ -1,6 +1,8 @@
+package com.gameoflife.rules;
+
 import com.gameoflife.Cell;
 import com.gameoflife.Matrix;
-import com.gameoflife.rules.LiveCellWithLessThan2LiveNeighboursShouldDieRule;
+import com.gameoflife.util.MatrixUtil;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

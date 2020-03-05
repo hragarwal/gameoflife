@@ -6,7 +6,7 @@ import com.gameoflife.Matrix;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class LiveCellWithGreaterThan3LiveNeighboursShouldDieRule implements Rule {
+public class LiveCellWithMoreThan3LiveNeighboursShouldDieRule implements Rule {
 
     private static final int MAX_LIVE_NEIGHBOURS_FOR_ACTIVE = 3;
 

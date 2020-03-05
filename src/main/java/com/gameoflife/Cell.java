@@ -62,4 +62,8 @@ public class Cell {
     public Cell die() {
         return new Cell(row,col,DEAD_CELL_STATE);
     }
+
+    public Cell alive() {
+        return new Cell(row,col,LIVE_CELL_STATE);
+    }
 }

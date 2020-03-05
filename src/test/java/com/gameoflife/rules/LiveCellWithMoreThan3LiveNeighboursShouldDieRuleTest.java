@@ -1,17 +1,19 @@
+package com.gameoflife.rules;
+
 import com.gameoflife.Cell;
 import com.gameoflife.Matrix;
+import com.gameoflife.util.MatrixUtil;
 import org.junit.Test;
-import com.gameoflife.rules.LiveCellWithGreaterThan3LiveNeighboursShouldDieRule;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class LiveCellWithGreaterThan3LiveNeighboursShouldDieRuleTest {
+public class LiveCellWithMoreThan3LiveNeighboursShouldDieRuleTest {
 
     @Test
     public void liveCellShouldSurviveIfItHas2or3LiveNeighbours() {
-        LiveCellWithGreaterThan3LiveNeighboursShouldDieRule rule =
-                new LiveCellWithGreaterThan3LiveNeighboursShouldDieRule();
+        LiveCellWithMoreThan3LiveNeighboursShouldDieRule rule =
+                new LiveCellWithMoreThan3LiveNeighboursShouldDieRule();
         Matrix matrix = MatrixUtil.getMatrix();
         Matrix updatedMatrixState = rule.apply(matrix);
         assertThat(updatedMatrixState.getCells().stream().filter(Cell::isAlive).count(), is(4L));
@@ -20,8 +22,8 @@ public class LiveCellWithGreaterThan3LiveNeighboursShouldDieRuleTest {
 
     @Test
     public void liveShouldDieIfNeighboursAreLessThan2() {
-        LiveCellWithGreaterThan3LiveNeighboursShouldDieRule rule =
-                new LiveCellWithGreaterThan3LiveNeighboursShouldDieRule();
+        LiveCellWithMoreThan3LiveNeighboursShouldDieRule rule =
+                new LiveCellWithMoreThan3LiveNeighboursShouldDieRule();
         Matrix matrix = MatrixUtil.getMatrixWithFirstRowCellsWithStateAs1();
         Matrix updatedMatrixState = rule.apply(matrix);
         assertThat(updatedMatrixState.getCells().stream().filter(Cell::isAlive).count(), is(3L));
@@ -30,8 +32,8 @@ public class LiveCellWithGreaterThan3LiveNeighboursShouldDieRuleTest {
 
     @Test
     public void liveShouldDieIfNeighboursAreMoreThan3() {
-        LiveCellWithGreaterThan3LiveNeighboursShouldDieRule rule =
-                new LiveCellWithGreaterThan3LiveNeighboursShouldDieRule();
+        LiveCellWithMoreThan3LiveNeighboursShouldDieRule rule =
+                new LiveCellWithMoreThan3LiveNeighboursShouldDieRule();
         Matrix matrix = MatrixUtil.getMatrixWithWillAllCellStateAs1();
         Matrix updatedMatrixState = rule.apply(matrix);
         assertThat(updatedMatrixState.getCells().stream().filter(Cell::isAlive).count(), is(4L));

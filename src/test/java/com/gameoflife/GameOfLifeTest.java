@@ -1,8 +1,8 @@
-import com.gameoflife.Cell;
-import com.gameoflife.GameOfLife;
-import com.gameoflife.Matrix;
+package com.gameoflife;
+
+import com.gameoflife.util.MatrixUtil;
 import org.junit.Test;
-import com.gameoflife.rules.LiveCellWithGreaterThan3LiveNeighboursShouldDieRule;
+import com.gameoflife.rules.LiveCellWithMoreThan3LiveNeighboursShouldDieRule;
 import com.gameoflife.rules.LiveCellWithLessThan2LiveNeighboursShouldDieRule;
 import com.gameoflife.rules.Rule;
 
@@ -52,7 +52,7 @@ public class GameOfLifeTest {
         //given
         List<Rule> rules = new ArrayList<Rule>(){{
             add(new LiveCellWithLessThan2LiveNeighboursShouldDieRule());
-            add(new LiveCellWithGreaterThan3LiveNeighboursShouldDieRule());
+            add(new LiveCellWithMoreThan3LiveNeighboursShouldDieRule());
         }};
         gameOfLife = new GameOfLife(rules);
         Matrix matrix = MatrixUtil.getMatrixWithWillAllCellStateAs1();

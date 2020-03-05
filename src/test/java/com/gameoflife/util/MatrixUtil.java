@@ -1,12 +1,14 @@
+package com.gameoflife.util;
+
 import com.gameoflife.Cell;
 import com.gameoflife.Matrix;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class MatrixUtil {
+public class MatrixUtil {
 
-    static Matrix getMatrix(){
+    public static Matrix getMatrix(){
         /*  0,1,0
             1,0,1
             0,1,0
@@ -20,7 +22,7 @@ class MatrixUtil {
         return new Matrix(cells);
     }
 
-    static Matrix getMatrixWithFirstRowCellsWithStateAs1(){
+    public static Matrix getMatrixWithFirstRowCellsWithStateAs1(){
          /* 1,1,1
             0,0,0
             0,0,0
@@ -34,7 +36,7 @@ class MatrixUtil {
         return new Matrix(cells);
     }
 
-    static Matrix getMatrixWithWillAllCellStateAs1(){
+    public static Matrix getMatrixWithWillAllCellStateAs1(){
          /* 1,1,1
             1,1,1
             1,1,1

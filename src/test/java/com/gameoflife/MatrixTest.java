@@ -1,5 +1,6 @@
-import com.gameoflife.Cell;
-import com.gameoflife.Matrix;
+package com.gameoflife;
+
+import com.gameoflife.util.MatrixUtil;
 import org.junit.Test;
 
 import java.util.*;
